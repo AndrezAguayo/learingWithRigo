@@ -13,6 +13,31 @@ mro_of_x = type(x).mro()
 
 print("Here are the classes that a Bool Type is derived from:{}".format(mro_of_x))
 
+### HERE IS A GETTO EXAMPLE OF THIS
+class nepsInt(object):
+    def __init__(self):
+        self.zero = 0
+        self.one = 1
+        self.two = 2
+        self.three = 3
+        self.four = 4
+
+class nepsBool(nepsInt):
+    def __init__(self):
+        super(nepsBool, self).__init__()
+        self.FALSE = self.zero
+        self.TRUE = self.one
+
+
+
+customInt = nepsInt()
+customBool = nepsBool()
+
+if customInt.zero == customBool.FALSE:
+    print("YES ITS TRUE")
+
+#######################################
+
 # This means that because a bool is an int, it can also index, like 0 and 1
 mylist = ["apple","pie"]
 print(mylist[False])
